@@ -60,6 +60,11 @@ class Network(object):
         self.build_nn()
         self._net.fit(pd.DataFrame(self._trainer[0]), pd.DataFrame(self._trainer[1]),validation_split=0.2, epochs=5, callbacks=[early_stopping_monitor])
     
+    def save(self,path):
+        self._net.save_wieghts(path+ "weights")
+        with open('model/architechture.json', 'w') as f:
+            f.write(self._net.to_json())
+
     def predict(self, sentence):
         if self._net is None or self._trainer is None:
             raise Exception('Must train first')

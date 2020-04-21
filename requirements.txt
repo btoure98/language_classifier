@@ -1,6 +1,4 @@
 pandas
 numpy
-keras 
-io
-glob
-collections
+keras ==2.3.0
+tensorflow ==1.14
