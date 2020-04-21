@@ -1,0 +1,6 @@
+pandas
+numpy
+keras 
+io
+glob
+collections
